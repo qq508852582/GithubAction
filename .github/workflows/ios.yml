@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: deploy-ios
-        run: fastlane beta
+        run: fastlane release
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
