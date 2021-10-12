@@ -19,7 +19,7 @@ jobs:
           npm -v
       - name: Checkout
         uses: actions/checkout@v2
-      - name:Xcode
+      - name: Xcode
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
           P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
