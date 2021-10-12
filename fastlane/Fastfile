@@ -7,9 +7,14 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-     disable_automatic_code_signing(path: "appci.xcodeproj")
-
-     enable_automatic_code_signing(path: "appci.xcodeproj")
+     update_code_signing_settings(
+           use_automatic_signing: true,
+           code_sign_identity: "iPhone Developer",
+           bundle_identifier: "com.xebni.appci",
+     )
+#      disable_automatic_code_signing(path: "appci.xcodeproj")
+#
+#      enable_automatic_code_signing(path: "appci.xcodeproj")
      build_app(xcargs: "-allowProvisioningUpdates")
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
