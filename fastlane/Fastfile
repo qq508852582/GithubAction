@@ -7,8 +7,10 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-     match(type: 'appstore')
+     sync_code_signing
+     disable_automatic_code_signing(path: "appci.xcodeproj")
      build_app
+     enable_automatic_code_signing(path: "appci.xcodeproj")
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
