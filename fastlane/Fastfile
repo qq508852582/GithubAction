@@ -12,7 +12,8 @@ platform :ios do
        issuer_id: "38769604-a289-4ae1-a536-e8bfc466e1fe",
        key_content: "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgXlkP3h0v3/z6caAB\n1wreA/xyWXOeLpSyDiS3YmnmHcygCgYIKoZIzj0DAQehRANCAASDF7XE3MRsVLeT\n9EDUmtfnfrMEf0hp8nMXJ9XxdfFlUKid3ej+m+ON6bYw79SC4Fe5g5OBJpri9Pch\n1Br/yoxp\n-----END PRIVATE KEY-----"
      )
-     pilot
+#      pilot(api_key: api_key)
+
 #      update_code_signing_settings(
 #            use_automatic_signing: true,
 #            code_sign_identity: "iPhone Developer",
