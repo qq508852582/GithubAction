@@ -23,7 +23,7 @@ platform :ios do
 #      sync_code_signing
      disable_automatic_code_signing(path: "appci.xcodeproj")
      build_app
-     enable_automatic_code_signing(path: "appci.xcodeproj")
+#      enable_automatic_code_signing(path: "appci.xcodeproj")
 #      build_app(xcargs: "-allowProvisioningUpdates")
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
