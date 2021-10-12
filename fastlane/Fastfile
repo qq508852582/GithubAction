@@ -14,14 +14,14 @@ platform :ios do
      )
 #      pilot(api_key: api_key)
 
-     update_code_signing_settings(
-           use_automatic_signing: true,
-           code_sign_identity: "iPhone Developer",
-           bundle_identifier: "com.xebni.appci",
-     )
+#      update_code_signing_settings(
+#            use_automatic_signing: true,
+#            code_sign_identity: "iPhone Developer",
+#            bundle_identifier: "com.xebni.appci",
+#      )
 #      sync_code_signing
-#      disable_automatic_code_signing(path: "appci.xcodeproj")
-#      enable_automatic_code_signing(path: "appci.xcodeproj")
+     disable_automatic_code_signing(path: "appci.xcodeproj")
+     enable_automatic_code_signing(path: "appci.xcodeproj")
      build_app(xcargs: "-allowProvisioningUpdates")
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
