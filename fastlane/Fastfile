@@ -7,14 +7,19 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-     update_code_signing_settings(
-           use_automatic_signing: true,
-           code_sign_identity: "iPhone Developer",
-           bundle_identifier: "com.xebni.appci",
+     app_store_connect_api_key(
+       key_id: "U29TPYR6DK",
+       issuer_id: "38769604-a289-4ae1-a536-e8bfc466e1fe",
+       key_content: "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgXlkP3h0v3/z6caAB\n1wreA/xyWXOeLpSyDiS3YmnmHcygCgYIKoZIzj0DAQehRANCAASDF7XE3MRsVLeT\n9EDUmtfnfrMEf0hp8nMXJ9XxdfFlUKid3ej+m+ON6bYw79SC4Fe5g5OBJpri9Pch\n1Br/yoxp\n-----END PRIVATE KEY-----"
      )
-#      disable_automatic_code_signing(path: "appci.xcodeproj")
-#
-#      enable_automatic_code_signing(path: "appci.xcodeproj")
+     pilot
+#      update_code_signing_settings(
+#            use_automatic_signing: true,
+#            code_sign_identity: "iPhone Developer",
+#            bundle_identifier: "com.xebni.appci",
+#      )
+     disable_automatic_code_signing(path: "appci.xcodeproj")
+     enable_automatic_code_signing(path: "appci.xcodeproj")
      build_app(xcargs: "-allowProvisioningUpdates")
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
