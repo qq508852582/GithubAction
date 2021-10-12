@@ -15,6 +15,9 @@ jobs:
       - name: Echo
         run: |
           echo hello git-action
+      - name: NPM
+        run: |
+          npm -v
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set Default Scheme
@@ -34,4 +37,4 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
-     
+
