@@ -52,18 +52,18 @@ jobs:
 #          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 #          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
-      - name: Install and Update Bundle
-        run: |
-                gem install bundler:1.17.3
-                bundle update
+#      - name: Install and Update Bundle
+#        run: |
+#                gem install bundler:1.17.3
+#                bundle update
 
       - name: Apple Developer Login
         env:
           APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
         run: |
-          bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password aaa
+          fastlane fastlane-credentials add --username 508825852@qq.com  --password aaa
 
 #      - name: Download Xcode Profiles
 #        run: bundle exec fastlane sigh download_all
       - name: deploy-ios
-        run: bundle exec fastlane release
+        run: fastlane release
