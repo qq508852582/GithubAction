@@ -59,7 +59,7 @@ jobs:
 
       - name: Apple Developer Login
         env:
-          APPLEPASSWORD: ${{ secrets.$APPLEPASSWORD }}
+          APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
         run: |
           bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password "$APPLEPASSWORD"
 
