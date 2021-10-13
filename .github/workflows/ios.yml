@@ -58,9 +58,9 @@ jobs:
                 bundle update
 
       - name: Apple Developer Login
+        env:
+          APPLEPASSWORD: ${{ secrets.$APPLEPASSWORD }}
         run: |
-          APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
-
           bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password "$APPLEPASSWORD"
 
 #      - name: Download Xcode Profiles
