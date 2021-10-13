@@ -64,7 +64,7 @@ jobs:
       - name: Apple Developer Login
         run: bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password secrets.APPLEPASSWORD
 
-      - name: Download Xcode Profiles
-        run: bundle exec fastlane sigh download_all
+#      - name: Download Xcode Profiles
+#        run: bundle exec fastlane sigh download_all
       - name: deploy-ios
         run: fastlane release
