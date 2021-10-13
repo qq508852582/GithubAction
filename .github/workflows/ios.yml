@@ -51,10 +51,6 @@ jobs:
 #          # apply provisioning profile
 #          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 #          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
-      - name: Select Xcode Version
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: latest-stable
 
       - name: Install and Update Bundle
         run: |
@@ -65,7 +61,7 @@ jobs:
         run: |
           APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
 
-          bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password $APPLEPASSWORD
+          bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password "$APPLEPASSWORD"
 
 #      - name: Download Xcode Profiles
 #        run: bundle exec fastlane sigh download_all
