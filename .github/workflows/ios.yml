@@ -27,6 +27,7 @@ jobs:
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION }}
           code-signing-identity: 'iOS Distribution'
           team-id: ${{ secrets.TEAM_ID }}
+          certificate-password: 111
 #      - name: Xcode
 #        env:
 #          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
