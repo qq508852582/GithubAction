@@ -28,6 +28,7 @@ jobs:
           code-signing-identity: 'iOS Distribution'
           team-id: ${{ secrets.TEAM_ID }}
           certificate-password: 111
+          update-targets: 'appci'
 #      - name: Xcode
 #        env:
 #          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
