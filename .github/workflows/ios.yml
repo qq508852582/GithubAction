@@ -61,7 +61,7 @@ jobs:
         env:
           APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
         run: |
-          bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password "$APPLEPASSWORD"
+          bundle exec fastlane fastlane-credentials add --username 508825852@qq.com  --password aaa
 
 #      - name: Download Xcode Profiles
 #        run: bundle exec fastlane sigh download_all
