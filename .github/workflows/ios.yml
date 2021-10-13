@@ -19,6 +19,14 @@ jobs:
           npm -v
       - name: Checkout
         uses: actions/checkout@v2
+      - name: iOS Build Action
+        uses: yukiarrr/ios-build-action@v1.4.0
+        with:
+          project-path: appci.xcodeproj
+          p12-base64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          mobileprovision-base64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+          code-signing-identity: 'iOS Distribution'
+          team-id: ${{ secrets.TEAM_ID }}
 #      - name: Xcode
 #        env:
 #          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
@@ -56,14 +64,14 @@ jobs:
 #        run: |
 #                gem install bundler:1.17.3
 #                bundle update
-
-      - name: Apple Developer Login
-        env:
-          APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
-        run: |
-          fastlane fastlane-credentials add --username 508825852@qq.com  --password "$APPLEPASSWORD"
-
-#      - name: Download Xcode Profiles
-#        run: bundle exec fastlane sigh download_all
-      - name: deploy-ios
-        run: fastlane release
+#
+#      - name: Apple Developer Login
+#        env:
+#          APPLEPASSWORD: ${{ secrets.APPLEPASSWORD }}
+#        run: |
+#          fastlane fastlane-credentials add --username 508825852@qq.com  --password "$APPLEPASSWORD"
+#
+##      - name: Download Xcode Profiles
+##        run: bundle exec fastlane sigh download_all
+#      - name: deploy-ios
+#        run: fastlane release
