@@ -21,9 +21,9 @@ platform :ios do
 #            bundle_identifier: "com.xebni.appci",
 #      )
 #      sync_code_signing
-     disable_automatic_code_signing(path: "appci.xcodeproj")
-     build_app
-     enable_automatic_code_signing(path: "appci.xcodeproj")
+#      disable_automatic_code_signing(path: "appci.xcodeproj")
+#      build_app
+#      enable_automatic_code_signing(path: "appci.xcodeproj")
 #      build_app(xcargs: "-allowProvisioningUpdates")
      upload_to_testflight
 #      upload_to_testflight(skip_waiting_for_build_processing: true)
