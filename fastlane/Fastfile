@@ -10,7 +10,7 @@ platform :ios do
 #      git_url(ENV['GIT_URL'])
 #      storage_mode("git")
 #      match(type: 'appstore')
-     build_app
+#      build_app
      app_store_connect_api_key(
        key_id: "U29TPYR6DK",
        issuer_id: "38769604-a289-4ae1-a536-e8bfc466e1fe",
