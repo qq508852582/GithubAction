@@ -76,4 +76,6 @@ jobs:
 ##      - name: Download Xcode Profiles
 ##        run: bundle exec fastlane sigh download_all
       - name: deploy-ios
+        env:
+            GIT_URL: ${{ secrets.GIT_URL }}
         run: fastlane release
