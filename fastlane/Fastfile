@@ -7,9 +7,9 @@ platform :ios do
   desc "release"
   lane :release do
      setup_ci if ENV['CI']
-     git_url(ENV['GIT_URL'])
+#      git_url(ENV['GIT_URL'])
      storage_mode("git")
-     match(type: 'appstore')
+#      match(type: 'appstore')
      build_app
      app_store_connect_api_key(
        key_id: "U29TPYR6DK",
