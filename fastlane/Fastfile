@@ -6,7 +6,9 @@ platform :ios do
 
   desc "release"
   lane :release do
-
+     setup_ci if ENV['CI']
+     match(type: 'appstore')
+     build_app
      app_store_connect_api_key(
        key_id: "U29TPYR6DK",
        issuer_id: "38769604-a289-4ae1-a536-e8bfc466e1fe",
@@ -20,12 +22,11 @@ platform :ios do
 #            bundle_identifier: "com.xebni.appci",
 #      )
 #      sync_code_signing
-       disable_automatic_code_signing(path: "appci.xcodeproj")
+#        disable_automatic_code_signing(path: "appci.xcodeproj")
 #      build_app
 #      enable_automatic_code_signing(path: "appci.xcodeproj")
 #      build_app(xcargs: "-allowProvisioningUpdates")
 #      upload_to_testflight
-     match
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
