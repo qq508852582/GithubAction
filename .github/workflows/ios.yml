@@ -19,16 +19,16 @@ jobs:
           npm -v
       - name: Checkout
         uses: actions/checkout@v2
-      - name: iOS Build Action
-        uses: yukiarrr/ios-build-action@v1.4.0
-        with:
-          project-path: appci.xcodeproj
-          p12-base64: ${{ secrets.P12 }}
-          mobileprovision-base64: ${{ secrets.MOBILEPROVISION }}
-          code-signing-identity: 'iOS Distribution'
-          team-id: ${{ secrets.TEAM_ID }}
-          certificate-password: 111
-          update-targets: 'appci'
+#      - name: iOS Build Action
+#        uses: yukiarrr/ios-build-action@v1.4.0
+#        with:
+#          project-path: appci.xcodeproj
+#          p12-base64: ${{ secrets.P12 }}
+#          mobileprovision-base64: ${{ secrets.MOBILEPROVISION }}
+#          code-signing-identity: 'iOS Distribution'
+#          team-id: ${{ secrets.TEAM_ID }}
+#          certificate-password: 111
+#          update-targets: 'appci'
 #      - name: Xcode
 #        env:
 #          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
@@ -75,5 +75,5 @@ jobs:
 #
 ##      - name: Download Xcode Profiles
 ##        run: bundle exec fastlane sigh download_all
-#      - name: deploy-ios
-#        run: fastlane release
+      - name: deploy-ios
+        run: fastlane release

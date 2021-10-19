@@ -2,10 +2,9 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    setup_circle_ci
   end
 
-  desc "Deploy a new version to the App Store"
+  desc "release"
   lane :release do
 
      app_store_connect_api_key(
@@ -21,11 +20,12 @@ platform :ios do
 #            bundle_identifier: "com.xebni.appci",
 #      )
 #      sync_code_signing
-#      disable_automatic_code_signing(path: "appci.xcodeproj")
+       disable_automatic_code_signing(path: "appci.xcodeproj")
 #      build_app
 #      enable_automatic_code_signing(path: "appci.xcodeproj")
 #      build_app(xcargs: "-allowProvisioningUpdates")
 #      upload_to_testflight
+     match
      upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
